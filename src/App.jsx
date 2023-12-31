@@ -1,19 +1,35 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import data from './data'
 function App() {
 	const [count, setCount] = useState(0)
 	const [text, setText] = useState([])
 
+
+	const handleSubmit = e => {
+		e.preventDefault()
+		let amount = parseInt(count) //we change type string(that comes from input value) to number
+		// console.log(typeof amount)
+
+		if (count <= 0) {
+			amount = 1
+		}
+		if (count > data.length) {
+			amount = data.length
+		}
+		setText(data.slice(0, amount))
+	}
+
+	console.log(data.length)
 	return (
 		<section className='section-center'>
 			<h3>tired of boring lorem ipsum?</h3>
-			<form className='lorem-form'>
-				<label htmlFor='amount'>paragraph:</label>
+			<form className='lorem-form' onSubmit={handleSubmit}>
+				<label htmlFor='amount'>paragraphs:</label>
 				<input
 					type='number'
 					name='amount'
 					id='amount'
-					value={text}
+					value={count}
 					onChange={e => setCount(e.target.value)}
 				/>
 				<button type='submit' className='btn'>
@@ -21,18 +37,9 @@ function App() {
 				</button>
 			</form>
 			<article>
-				<p className='result'>
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
-					fuga nisi veniam dolor a quisquam quod illo? Aperiam voluptatem illo
-					tenetur sint, deleniti id, facilis, consequuntur ex maiores omnis
-					dolorem?
-				</p>
-				<p className='result'>
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
-					fuga nisi veniam dolor a quisquam quod illo? Aperiam voluptatem illo
-					tenetur sint, deleniti id, facilis, consequuntur ex maiores omnis
-					dolorem?
-				</p>
+				{text.map((text, textIndex) => {
+					return <p key={textIndex}>{text}</p>
+				})}
 			</article>
 		</section>
 	)
