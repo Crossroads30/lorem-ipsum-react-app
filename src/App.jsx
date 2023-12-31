@@ -20,8 +20,20 @@ function App() {
 					generate
 				</button>
 			</form>
-			<p className='result'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis fuga nisi veniam dolor a quisquam quod illo? Aperiam voluptatem illo tenetur sint, deleniti id, facilis, consequuntur ex maiores omnis dolorem?</p>
-			<p className='result'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis fuga nisi veniam dolor a quisquam quod illo? Aperiam voluptatem illo tenetur sint, deleniti id, facilis, consequuntur ex maiores omnis dolorem?</p>
+			<article>
+				<p className='result'>
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
+					fuga nisi veniam dolor a quisquam quod illo? Aperiam voluptatem illo
+					tenetur sint, deleniti id, facilis, consequuntur ex maiores omnis
+					dolorem?
+				</p>
+				<p className='result'>
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
+					fuga nisi veniam dolor a quisquam quod illo? Aperiam voluptatem illo
+					tenetur sint, deleniti id, facilis, consequuntur ex maiores omnis
+					dolorem?
+				</p>
+			</article>
 		</section>
 	)
 }
